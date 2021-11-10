@@ -10,21 +10,19 @@ import javax.persistence.Table;
 public class Ministry {
 	
 	@Id
-	@Column(name ="State Name")
 	private String stateName;
 	
-	@Column(name = "Password")
 	private String password;
 	
-	@Column(name ="Officer Name")
 	private String officerName;
 	
-	@Column(name ="Mobile Number")
 	private Long mobileNumber;
 	
 	
-	@Column (name ="Email")
 	private String email;
+	
+	
+	
 
 
 	public String getStateName() {

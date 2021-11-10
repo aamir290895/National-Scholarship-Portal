@@ -1,69 +1,72 @@
 package com.nsp.project.entity;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name ="Student Application")
 public class StudentApplication {
 	
+	
+	
 	@Id
-	@Column(name = "Student Id")
 	private int studentId;
 	
-	@Column(name = "Scheme Id")
 	private int schemeId;
 	
-	@Column(name = "Religion")
 	private String religion;
 	
 	
 	
-	@Column(name = "Community")
 	private String Community;
 	
-	@Column(name = "Father's Name")
 	private String fathersName;
 	
 	
-	@Column(name = "Mother's Name")
 	private String mothersName;
 	
-	@Column (name = "Income")
 	private Long income;
 	
-	@Column (name = "Course")
 	private String course;
 	
-	@Column(name = "10th percentage")
 	private String intermediatePercentage;
 	
 	
-	@Column(name = "12th Percentage")
 	private String postIntermediatePercentage;
 	
-	@Column(name ="Disability")
 	private boolean disability;
 	
-	@Column(name ="Applied Date")
 	private LocalDate appliedDate;
 	
-	@Column(name = "Status")
 	private String status;
 	
-	@Column(name = "Institute Accepted Date")
 	private LocalDate instituteAcceptedDate;
 	
 	
 	
-	@Column(name = "State Accepted Date")
 	private LocalDate stateAcceptedDate;
 	
-	@Column(name = "Ministry Accepted Date")
 	private LocalDate ministryAcceptedDate;
+	
+	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
+	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="schemeId")},
+			inverseJoinColumns={@JoinColumn(name="studentId")})
+	Set<Scheme> scheme;
+	
+	
+	@ManyToOne
+	private Student student;
+	
 
 	public int getStudentId() {
 		return studentId;
@@ -191,6 +194,22 @@ public class StudentApplication {
 
 	public void setMinistryAcceptedDate(LocalDate ministryAcceptedDate) {
 		this.ministryAcceptedDate = ministryAcceptedDate;
+	}
+
+	public Set<Scheme> getScheme() {
+		return scheme;
+	}
+
+	public void setScheme(Set<Scheme> scheme) {
+		this.scheme = scheme;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 	
 	

@@ -1,11 +1,13 @@
 package com.nsp.project.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -13,57 +15,66 @@ import javax.persistence.Table;
 public class InstituteApplication {
 	
 	@Id
-	@Column(name ="Institute Code")
 	private int institudeCode;
 	
 	
 	
-	@Column(name="Institute Name")
 	private String instituteName;
 	
-	@Column(name = "City")
 	private String city ;
 	
 	
-	@Column(name = "District")
 	private String district;
 	
 	
-	@Column(name = "Pin Code")
 	private String pinCode;
 	
-	@Column(name ="DISE Code")
 	private int  diseCode;
 	
-	@Column(name ="University Name")
 	private String universityName;
 	
-	@Column(name ="Password")
 	private String password;
 	
 	
-	@Column(name="Principal")
 	private String principal;
 	
-	@Column(name="Telephone")
 	private Long telephone;
 	
-	@Column(name = "Apply date")
 	private LocalDate applyDate;
 	
-	@Column(name = "Status")
 	private String status;
 	
-	@Column(name = "State Accepted Date")
 	private LocalDate stateAcceptedDate;
 	
-	@Column(name = "Ministry Accepted Date")
 	private LocalDate ministryAcceptedDate;
 	
 	
 	
 	@ManyToOne
+	private StateNodalOfficer sno;
+	
+	@OneToMany
+	List<Student> stuList ;
+	
+	
+	
 
+
+	public List<Student> getStuList() {
+		return stuList;
+	}
+
+	public void setStuList(List<Student> stuList) {
+		this.stuList = stuList;
+	}
+
+	public StateNodalOfficer getSno() {
+		return sno;
+	}
+
+	public void setSno(StateNodalOfficer sno) {
+		this.sno = sno;
+	}
 
 	public String getInstituteName() {
 		return instituteName;

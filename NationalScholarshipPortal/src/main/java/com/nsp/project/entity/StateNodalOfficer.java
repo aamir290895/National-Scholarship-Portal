@@ -1,8 +1,11 @@
 package com.nsp.project.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,24 +13,22 @@ import javax.persistence.Table;
 public class StateNodalOfficer {
 	
 	@Id
-	@Column(name ="State Name")
 	private String stateName;
 	
 	
-	@Column(name ="Password")
 	private String password;
 	
 	
-	@Column(name ="Officer Name")
 	private String officerName;
 	
 	
-	@Column(name ="Mobile Number")
 	private Long mobileNumber;
 	
 	
-	@Column(name ="Email")
     private String email;
+    
+    @OneToMany
+    List<InstituteApplication> instApplication;
 
 	public String getStateName() {
 		return stateName;
@@ -67,6 +68,14 @@ public class StateNodalOfficer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<InstituteApplication> getInstApplication() {
+		return instApplication;
+	}
+
+	public void setInstApplication(List<InstituteApplication> instApplication) {
+		this.instApplication = instApplication;
 	}
 	
      

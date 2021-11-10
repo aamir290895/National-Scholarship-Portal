@@ -1,10 +1,16 @@
 package com.nsp.project.entity;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,18 +18,30 @@ import javax.persistence.Table;
 public class Scheme {
 	
 	@Id
-	@Column(name ="Scheme Id")
 	private Long schemeId;
 	
-	@Column(name ="Scheme Name")
 	private String schemeName;
 	
-	@Column(name ="Last Date To Apply")  
 	private LocalDate lastDateToApply;
 	
-	
-	@Column(name ="Amount")
 	private int amount ;
+	
+	
+	
+	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
+	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="studentId")},
+			inverseJoinColumns={@JoinColumn(name="schemeId")})
+	Set<Scheme> scheme;
+
+
+	public Set<Scheme> getScheme() {
+		return scheme;
+	}
+
+
+	public void setScheme(Set<Scheme> scheme) {
+		this.scheme = scheme;
+	}
 
 
 	public Long getSchemeId() {
