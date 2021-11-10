@@ -1,10 +1,10 @@
 package com.nsp.project.entity;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -29,9 +29,9 @@ public class Scheme {
 	
 	
 	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
-	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="studentId")},
-			inverseJoinColumns={@JoinColumn(name="schemeId")})
-	Set<Scheme> scheme;
+	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="student_id")},
+			inverseJoinColumns={@JoinColumn(name="scheme_id")})
+	Set<Scheme> scheme = new HashSet<>();
 
 
 	public Set<Scheme> getScheme() {

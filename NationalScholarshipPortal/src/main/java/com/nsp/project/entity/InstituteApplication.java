@@ -3,9 +3,9 @@ package com.nsp.project.entity;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -54,6 +54,7 @@ public class InstituteApplication {
 	private StateNodalOfficer sno;
 	
 	@OneToMany
+	@JoinColumn(name ="student_id")
 	List<Student> stuList ;
 	
 	

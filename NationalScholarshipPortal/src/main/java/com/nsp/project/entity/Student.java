@@ -2,15 +2,10 @@ package com.nsp.project.entity;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,6 +17,7 @@ public class Student {
 	
 	
 	@OneToMany
+	@JoinColumn(name ="student_id")
 	List<StudentApplication> stuApp;
 	
 	
@@ -29,7 +25,7 @@ public class Student {
     private InstituteApplication instApp;
 	
 	@Id
-	private String studentId;
+	private Long studentId;
 	private int instituteCode;
 	private String studentName;
 	private LocalDate dateOfBirth;
@@ -49,11 +45,11 @@ public class Student {
 	
 	private String password;
 
-	public String getStudentId() {
+	public Long getStudentId() {
 		return studentId;
 	}
 
-	public void setStudentId(String studentId) {
+	public void setStudentId(Long studentId) {
 		this.studentId = studentId;
 	}
 
