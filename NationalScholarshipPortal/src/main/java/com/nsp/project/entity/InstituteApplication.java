@@ -56,28 +56,13 @@ public class InstituteApplication {
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "studentId")
-	List<Student> stuList ;
+	private List<Student> stuList ;
 	
 	
 	
 
 
-	public List<Student> getStuList() {
-		return stuList;
-	}
-
-	public void setStuList(List<Student> stuList) {
-		this.stuList = stuList;
-	}
-
-	public StateNodalOfficer getSno() {
-		return sno;
-	}
-
-	public void setSno(StateNodalOfficer sno) {
-		this.sno = sno;
-	}
-
+	
 	public String getInstituteName() {
 		return instituteName;
 	}

@@ -61,7 +61,7 @@ public class StudentApplication {
 	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
 	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="scheme_id")},
 			inverseJoinColumns={@JoinColumn(name="student_id")})
-	Set<Scheme> scheme = new HashSet<>();
+	private Set<Scheme> scheme = new HashSet<>();
 	
 	
 	@ManyToOne
@@ -196,21 +196,7 @@ public class StudentApplication {
 		this.ministryAcceptedDate = ministryAcceptedDate;
 	}
 
-	public Set<Scheme> getScheme() {
-		return scheme;
-	}
-
-	public void setScheme(Set<Scheme> scheme) {
-		this.scheme = scheme;
-	}
-
-	public Student getStudent() {
-		return student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
+	
 	
 	
 

@@ -30,7 +30,7 @@ public class StateNodalOfficer {
     
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "instituteCode")
-    List<InstituteApplication> instApplication;
+    private  List<InstituteApplication> instApplication;
 
 	public String getStateName() {
 		return stateName;
@@ -72,13 +72,7 @@ public class StateNodalOfficer {
 		this.email = email;
 	}
 
-	public List<InstituteApplication> getInstApplication() {
-		return instApplication;
-	}
-
-	public void setInstApplication(List<InstituteApplication> instApplication) {
-		this.instApplication = instApplication;
-	}
+	
 	
      
 }

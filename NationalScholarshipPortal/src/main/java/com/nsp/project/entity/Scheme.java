@@ -31,18 +31,10 @@ public class Scheme {
 	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
 	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="student_id")},
 			inverseJoinColumns={@JoinColumn(name="scheme_id")})
-	Set<Scheme> scheme = new HashSet<>();
+	private Set<Scheme> scheme = new HashSet<>();
 
 
-	public Set<Scheme> getScheme() {
-		return scheme;
-	}
-
-
-	public void setScheme(Set<Scheme> scheme) {
-		this.scheme = scheme;
-	}
-
+	
 
 	public Long getSchemeId() {
 		return schemeId;
