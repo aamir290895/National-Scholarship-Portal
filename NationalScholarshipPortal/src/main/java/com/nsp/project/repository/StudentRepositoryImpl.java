@@ -180,4 +180,10 @@ public class StudentRepositoryImpl implements StudentRepository{
 		return false;
 	}
 
+	@Override
+	public void insertStudentDetails(Student sObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
