@@ -2,6 +2,7 @@ package com.nsp.project.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,8 +28,8 @@ public class StateNodalOfficer {
 	
     private String email;
     
-    @OneToMany
-    @JoinColumn(name ="institute_id")
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "instituteCode")
     List<InstituteApplication> instApplication;
 
 	public String getStateName() {

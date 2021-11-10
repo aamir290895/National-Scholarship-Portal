@@ -3,6 +3,7 @@ package com.nsp.project.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -53,8 +54,8 @@ public class InstituteApplication {
 	@ManyToOne
 	private StateNodalOfficer sno;
 	
-	@OneToMany
-	@JoinColumn(name ="student_id")
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "studentId")
 	List<Student> stuList ;
 	
 	

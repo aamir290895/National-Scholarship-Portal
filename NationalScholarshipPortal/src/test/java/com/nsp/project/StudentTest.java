@@ -16,7 +16,7 @@ public class StudentTest {
 	void insertDetails() {
 		Student s = new Student();
 		s.setStudentId( (long) 12);
-		sImpl.insertStudentDetails(s);
+		sImpl.count();
 		
 		
 	}

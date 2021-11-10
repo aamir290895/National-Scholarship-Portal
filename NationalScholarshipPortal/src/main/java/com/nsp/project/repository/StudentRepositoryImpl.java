@@ -8,12 +8,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Repository;
 
 import com.nsp.project.entity.Student;
-
+@Repository 
 public class StudentRepositoryImpl implements StudentRepository{
-    @Autowired
-    private Student student;
+   
     
 	@Override
 	public List<Student> findAll() {
