@@ -5,14 +5,11 @@ import java.time.LocalDate;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Bean;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import com.nsp.project.entity.Student;
 import com.nsp.project.repository.StudentRepository;
@@ -24,27 +21,32 @@ public class StudentTest {
 	@Autowired
 	StudentRepository stRepo;
 	
-	 @PersistenceContext
-	  EntityManager entityManager;
-	 
 	
+	 @PersistenceUnit
+	   EntityManagerFactory entityManagerFactory;
+
+
 	 
 	
 	 
 	 
 	@Test
 	void insertDetails() {
-		EntityManagerFactory entityManagerFactory = 
-				Persistence.createEntityManagerFactory("MyJPA"); //persistence.xml is read here 
+	
 		
 		System.out.println("Entity Manager Factory : "+entityManagerFactory);
 		
-		entityManager = entityManagerFactory.createEntityManager();
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		//ctrl+shift+M
 		
 		System.out.println("Entity Manager : "+entityManager);
 		
 		EntityTransaction transaction = entityManager.getTransaction();
+
+		//ctrl+shift+M
+		
+		System.out.println("Entity Manager : "+entityManager);
+		
 		transaction.begin();
 		
 		
