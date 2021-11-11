@@ -3,17 +3,30 @@ package com.nsp.project.repository;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.nsp.project.entity.Student;
 @Repository
 public class StudentRepository implements JpaRepository<Student,Long> {
-
+    @PersistenceContext
+    private EntityManager entityManager;
+    
+    
+    @Transactional  //for test
+	public Student saveStudent(Student student) {
+		entityManager.persist(student);
+		return student;
+	}
+    
 	@Override
 	public Page<Student> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
@@ -23,6 +36,7 @@ public class StudentRepository implements JpaRepository<Student,Long> {
 	@Override
 	public <S extends Student> S save(S entity) {
 		// TODO Auto-generated method stub
+		entityManager.persist(entity);
 		return null;
 	}
 
