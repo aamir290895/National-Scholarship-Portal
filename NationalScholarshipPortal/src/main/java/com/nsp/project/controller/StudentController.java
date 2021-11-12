@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nsp.project.entity.Student;
 import com.nsp.project.repository.StudentRepository;
+import com.nsp.project.service.StudentServiceImpl;
 
 @RestController
 @RequestMapping("/Student")
 public class StudentController {
 	
 	  @Autowired
-      private StudentRepository studentRepository;
+      private  StudentServiceImpl stuService;
 	  
 	  @GetMapping("/list")
 	  public List<Student> getAllStudents(){
-		return studentRepository.findAll();
+		return stuService.getAllStudents();
 		  
 	  }
 	  

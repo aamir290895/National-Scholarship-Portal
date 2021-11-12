@@ -10,10 +10,16 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 public class NationalScholarshipPortalApplication {
 
+
+	
 	public static void main(String[] args) {
 		SpringApplication.run(NationalScholarshipPortalApplication.class, args);
 		
 		System.out.println("App Started.........");
+
+		
+		
+	
 	}
 
 }

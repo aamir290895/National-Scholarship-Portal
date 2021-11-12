@@ -6,4 +6,6 @@ import com.nsp.project.entity.Student;
 
 public interface StudentService {
   List<Student> getAllStudents();
+  
+  void save (Student s);
 }
