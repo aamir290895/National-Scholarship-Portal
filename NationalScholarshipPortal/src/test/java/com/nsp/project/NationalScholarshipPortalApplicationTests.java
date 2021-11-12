@@ -18,8 +18,10 @@ import com.nsp.project.service.StudentServiceImpl;
 class NationalScholarshipPortalApplicationTests {
 
 
-	@Autowired
-	private StudentRepositoryImpl repo;
+    
+    
+    @Autowired
+	StudentRepositoryImpl repo;
 
 	@Test
 	void contextLoads() {
@@ -28,14 +30,18 @@ class NationalScholarshipPortalApplicationTests {
 
 	@Test
 	public void insertDetails() {
+        
+		Student s = new Student();
+		
 		LocalDate ld = LocalDate.of(2021, 10, 11);
 
-		Student s = new Student();
 		s.setStudentId((long) 12345);
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
 		s.setStudentName("Aamir Khan");
 		s.setBankIfsc("SBIN0000481");
+		
+		
 		s.setGender("Male");
 		s.setDistrict("Shahdol");
 		s.setEmail("aamir.007sdl.ak@gmail.com");

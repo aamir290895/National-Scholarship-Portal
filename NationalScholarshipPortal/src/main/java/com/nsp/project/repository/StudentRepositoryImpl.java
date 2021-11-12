@@ -13,10 +13,11 @@ import org.springframework.stereotype.Repository;
 import com.nsp.project.entity.Student;
 @Repository
 public class StudentRepositoryImpl implements StudentRepository {
-	
-	
-	private HibernateTemplate template ;
 
+	
+	private HibernateTemplate temp;
+	
+	
 	@Override
 	public List<Student> findAll() {
 		// TODO Auto-generated method stub
@@ -38,7 +39,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Override
 	public <S extends Student> List<S> saveAll(Iterable<S> entities) {
 		// TODO Auto-generated method stub
-		return (List<S>) template.save(entities);
+		return null;
 	}
 
 	@Override
@@ -110,7 +111,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 	@Override
 	public <S extends Student> S save(S entity) {
 		// TODO Auto-generated method stub
-		return (S) template.save(entity);
+		return null;
 	}
 
 	@Override
@@ -183,6 +184,12 @@ public class StudentRepositoryImpl implements StudentRepository {
 	public <S extends Student> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void put(Student s) {
+		// TODO Auto-generated method stub
+		temp.update(s);
 	}
 
 }
