@@ -1,27 +1,27 @@
 package com.nsp.project;
 
 import java.time.LocalDate;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.nsp.project.entity.Student;
-import com.nsp.project.repository.StudentRepositoryImpl;
+import com.nsp.project.repository.StudentRepository;
 import com.nsp.project.service.StudentServiceImpl;
 
 @SpringBootTest
-class NationalScholarshipPortalApplicationTests {
+public class NationalScholarshipPortalApplicationTests {
 
 
     
     
     @Autowired
-	StudentRepositoryImpl repo;
+	StudentRepository repo;
+    
+    @Autowired
+    StudentServiceImpl service;
 
 	@Test
 	void contextLoads() {
@@ -32,15 +32,12 @@ class NationalScholarshipPortalApplicationTests {
 	public void insertDetails() {
         
 		Student s = new Student();
-		
 		LocalDate ld = LocalDate.of(2021, 10, 11);
 
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
-		s.setStudentName("Avanash");
+		s.setStudentName("Aamir");
 		s.setBankIfsc("SBIN0000481");
-		
-		
 		s.setGender("Male");
 		s.setDistrict("Shahdol");
 		s.setEmail("avinash@gmail.com");
@@ -48,6 +45,27 @@ class NationalScholarshipPortalApplicationTests {
 		s.setDateOfBirth(ld);
 		s.setInstituteCode(1);
 
-        repo.saveStudent(s);
+        repo.save(s);
+	}
+	
+	@Test
+	public void getStudents() {
+      service.getAllStudents();
+      
+      List<Student> list = service.getAllStudents();
+      for(Student stu: list)
+		{
+			System.out.println(stu.getStudentId());
+			System.out.println(stu.getStudentName());
+			System.out.println(stu.getBankIfsc());
+			System.out.println(stu.getStudentId());
+			System.out.println(stu.getStudentId());
+			System.out.println(stu.getStudentId());
+			System.out.println(stu.getStudentId());
+			System.out.println(stu.getStudentId());
+
+			
+		}
+	     
 	}
 }

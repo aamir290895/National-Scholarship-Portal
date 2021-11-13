@@ -17,7 +17,7 @@ public class StudentController {
 	
 	  @Autowired
       private  StudentServiceImpl stuService;
-	  
+
 	  @GetMapping("/list")//localhost:8080/Student/list/1
 	  public List<Student> getAllStudents(){
 		return stuService.getAllStudents();

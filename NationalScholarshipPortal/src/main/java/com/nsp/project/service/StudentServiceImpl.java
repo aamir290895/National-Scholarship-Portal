@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nsp.project.entity.Student;
-import com.nsp.project.repository.StudentRepositoryImpl;
+import com.nsp.project.repository.StudentRepository;
 
 
 @Service
 public class StudentServiceImpl implements StudentService{
 
 	@Autowired
-	private StudentRepositoryImpl repo;
+	private StudentRepository repo;
 
 	@Override
 	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
-		return repo.selectAllStudents();
+		return repo.findAll();
 	}
 
 	@Override
@@ -28,18 +28,6 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	
-//	@Override
-//	public List<Student> getAllStudents() {
-//		// TODO Auto-generated method stub
-//		return repo.findAll();
-//	}
-//
-//    
-//	@Override
-//	public void save(Student s) {
-//		// TODO Auto-generated method stub
-//		repo.save(s);
-//	}
 	
 
 }
