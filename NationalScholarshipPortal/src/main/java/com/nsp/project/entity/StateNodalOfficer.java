@@ -29,7 +29,7 @@ public class StateNodalOfficer {
     private String email;
     
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "instituteCode")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sno")
     private  List<InstituteApplication> instApplication;
 
 	public String getStateName() {

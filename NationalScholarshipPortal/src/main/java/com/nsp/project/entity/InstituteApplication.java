@@ -16,6 +16,7 @@ import javax.persistence.Table;
 public class InstituteApplication {
 	
 	@Id
+	
 	private int institudeCode;
 	
 	
@@ -49,9 +50,10 @@ public class InstituteApplication {
 	
 	private LocalDate ministryAcceptedDate;
 	
-	
+//	com.nsp.project.entity.InstituteApplication.instituteCode in com.nsp.project.entity.StateNodalOfficer.instApplication
 	
 	@ManyToOne
+	@JoinColumn(name ="stateName")
 	private StateNodalOfficer sno;
 	
 	

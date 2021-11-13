@@ -35,7 +35,6 @@ class NationalScholarshipPortalApplicationTests {
 		
 		LocalDate ld = LocalDate.of(2021, 10, 11);
 
-		s.setStudentId((long) 12345);
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
 		s.setStudentName("Aamir Khan");
@@ -49,6 +48,6 @@ class NationalScholarshipPortalApplicationTests {
 		s.setDateOfBirth(ld);
 		s.setInstituteCode(1);
 
-        repo.save(s);
+        repo.saveStudent(s);
 	}
 }

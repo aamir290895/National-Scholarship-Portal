@@ -14,19 +14,32 @@ public class StudentServiceImpl implements StudentService{
 
 	@Autowired
 	private StudentRepositoryImpl repo;
-	
+
 	@Override
 	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
-		return repo.findAll();
+		return null;
 	}
 
-    
 	@Override
 	public void save(Student s) {
 		// TODO Auto-generated method stub
-		repo.save(s);
+		
 	}
+
+	
+//	@Override
+//	public List<Student> getAllStudents() {
+//		// TODO Auto-generated method stub
+//		return repo.findAll();
+//	}
+//
+//    
+//	@Override
+//	public void save(Student s) {
+//		// TODO Auto-generated method stub
+//		repo.save(s);
+//	}
 	
 
 }

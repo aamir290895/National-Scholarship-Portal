@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-
+//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+//@ComponentScan({"io.msela"})
+//@EntityScan("io.msela.springbootstarter")
 public class NationalScholarshipPortalApplication {
 
 
