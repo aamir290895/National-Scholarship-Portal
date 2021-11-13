@@ -37,7 +37,7 @@ class NationalScholarshipPortalApplicationTests {
 
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
-		s.setStudentName("Aamir Khan");
+		s.setStudentName("Akib Khan");
 		s.setBankIfsc("SBIN0000481");
 		
 		

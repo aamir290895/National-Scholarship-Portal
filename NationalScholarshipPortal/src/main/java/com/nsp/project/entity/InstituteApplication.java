@@ -57,7 +57,7 @@ public class InstituteApplication {
 	private StateNodalOfficer sno;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "studentId")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "instApp")
 	private List<Student> stuList ;
 	
 	

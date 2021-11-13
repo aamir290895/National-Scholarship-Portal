@@ -20,7 +20,7 @@ public class Student {
 	
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "studentId")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
 	private List<StudentApplication> stuApp;
 	
 	
