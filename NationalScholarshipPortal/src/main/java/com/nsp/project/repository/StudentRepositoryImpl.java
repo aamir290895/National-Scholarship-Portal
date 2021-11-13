@@ -1,6 +1,9 @@
 package com.nsp.project.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -27,6 +30,14 @@ public class StudentRepositoryImpl extends BaseRepository implements StudentRepo
     	
 		// TODO Auto-generated method stub
 		
+	}
+    @Transactional
+	@Override
+	public List<Student> selectAllStudents() {
+		// TODO Auto-generated method stub
+    	
+    	TypedQuery query = getEntityManager().createQuery("student",Student.class);
+		return query.getResultList();
 	}
 
 

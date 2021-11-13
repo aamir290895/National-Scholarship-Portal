@@ -12,13 +12,13 @@ import com.nsp.project.repository.StudentRepository;
 import com.nsp.project.service.StudentServiceImpl;
 
 @RestController
-@RequestMapping("/Student")
+@RequestMapping("/student")
 public class StudentController {
 	
 	  @Autowired
       private  StudentServiceImpl stuService;
 	  
-	  @GetMapping("/list")
+	  @GetMapping("/list")//localhost:8080/Student/list/1
 	  public List<Student> getAllStudents(){
 		return stuService.getAllStudents();
 		  

@@ -37,13 +37,13 @@ class NationalScholarshipPortalApplicationTests {
 
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
-		s.setStudentName("Akib Khan");
+		s.setStudentName("Avanash");
 		s.setBankIfsc("SBIN0000481");
 		
 		
 		s.setGender("Male");
 		s.setDistrict("Shahdol");
-		s.setEmail("aamir.007sdl.ak@gmail.com");
+		s.setEmail("avinash@gmail.com");
 		s.setBankName("SBI");
 		s.setDateOfBirth(ld);
 		s.setInstituteCode(1);
