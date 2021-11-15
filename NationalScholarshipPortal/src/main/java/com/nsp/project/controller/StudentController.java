@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nsp.project.entity.Student;
-import com.nsp.project.repository.StudentRepository;
+import com.nsp.project.entities.Student;
+import com.nsp.project.repositories.StudentRepository;
 import com.nsp.project.service.StudentServiceImpl;
 
 @RestController

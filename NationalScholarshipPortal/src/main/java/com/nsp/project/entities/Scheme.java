@@ -1,4 +1,4 @@
-package com.nsp.project.entity;
+package com.nsp.project.entities;
 
 import java.time.LocalDate;
 import java.util.HashSet;
