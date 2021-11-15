@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.nsp.project.entities.InstituteApplication;
-import com.nsp.project.entities.Student;
-import com.nsp.project.repositories.InstituteApplicationRepository;
-import com.nsp.project.repositories.StudentRepository;
+import com.nsp.project.entity.InstituteApplication;
+import com.nsp.project.entity.Student;
+import com.nsp.project.repository.InstituteApplicationRepository;
+import com.nsp.project.repository.StudentRepository;
 
 @SpringBootTest
-public class RepositoryTesting {
+public class RepositoriesTesting {
 	
 	@Autowired
 	StudentRepository studentRepository;
@@ -86,4 +86,5 @@ public class RepositoryTesting {
 		studentRepository.delete(s);
 		
 	}
+
 }

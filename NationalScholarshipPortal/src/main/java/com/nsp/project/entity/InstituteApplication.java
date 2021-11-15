@@ -1,4 +1,4 @@
-package com.nsp.project.entities;
+package com.nsp.project.entity;
 
 import java.time.LocalDate;
 import java.util.List;
