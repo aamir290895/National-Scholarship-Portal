@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name ="Student Application")
+@Table(name ="STUDENT_APPLICATION")
 public class StudentApplication {
 	
 	

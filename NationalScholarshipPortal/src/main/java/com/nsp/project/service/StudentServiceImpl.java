@@ -21,11 +21,45 @@ public class StudentServiceImpl implements StudentService{
 		return repo.findAll();
 	}
 
+	
+
 	@Override
-	public void save(Student s) {
+	public void saveStudent(Student s) {
 		// TODO Auto-generated method stub
-		
+		repo.save(s);
 	}
+
+	@Override
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		List<Student> list = repo.findAll();
+		for (Student s: list) {
+			if(s.getStudentId() == id){
+				return s;
+			}
+		}
+		return null;
+	}
+
+
+
+	@Override
+	public void updateStudentDetail(Student s) {
+		// TODO Auto-generated method stub
+	      repo.save(s);
+	}
+
+
+
+	@Override
+	public void deleteStudent(Student s) {
+		// TODO Auto-generated method stub
+		repo.delete(s);
+	}
+
+
+
+	
 
 	
 	

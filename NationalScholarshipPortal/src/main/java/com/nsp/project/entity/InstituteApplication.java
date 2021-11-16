@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Institute")
+@Table(name ="INSTITUTE")
 public class InstituteApplication {
 	
 	@Id
@@ -55,7 +55,7 @@ public class InstituteApplication {
 //	com.nsp.project.entity.InstituteApplication.instituteCode in com.nsp.project.entity.StateNodalOfficer.instApplication
 	
 	@ManyToOne
-	@JoinColumn(name ="STATE_NAME")
+	@JoinColumn(name ="STATE_NODAL_OFFICER")
 	private StateNodalOfficer sno;
 	
 	

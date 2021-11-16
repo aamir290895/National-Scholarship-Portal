@@ -9,5 +9,9 @@ import com.nsp.project.entity.Student;
 public interface StudentService {
   List<Student> getAllStudents();
   
-  void save (Student s);
+  public void saveStudent (Student s);
+  public Student getStudent(int id);
+  public void updateStudentDetail(Student s);
+  public void deleteStudent(Student s);
+  
 }
