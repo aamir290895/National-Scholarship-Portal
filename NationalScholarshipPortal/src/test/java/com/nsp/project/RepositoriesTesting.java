@@ -80,10 +80,9 @@ public class RepositoriesTesting {
 	@Test
 	void deleteStudent() {
 		
-		Student s = studentRepository.findById((long)4).get();
+		Student s = studentRepository.findById(1).get();
 		
 		
-		studentRepository.delete(s);
 		
 	}
 

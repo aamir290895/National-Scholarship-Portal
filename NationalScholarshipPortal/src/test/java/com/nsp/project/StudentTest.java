@@ -55,7 +55,6 @@ public class StudentTest {
 
 		
 	    Student s = new Student();
-	    s.setStudentId((long) 0000);
 		s.setAdharNumber("462773832833");
 		s.setBankAccountNumber("20380162843");
 		s.setStudentName("Aamir Khan");

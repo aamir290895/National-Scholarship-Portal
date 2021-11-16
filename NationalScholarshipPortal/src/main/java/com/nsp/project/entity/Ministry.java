@@ -1,6 +1,8 @@
 package com.nsp.project.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,10 @@ import javax.persistence.Table;
 public class Ministry {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int ministryId;
+	
+	
 	private String stateName;
 	
 	private String password;

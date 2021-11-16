@@ -20,16 +20,10 @@ public class Student {
 	
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
-	private List<StudentApplication> stuApp;
-	
-	
-    @ManyToOne
-    private InstituteApplication instApp;
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private Long studentId;
+	private int studentId;
 	private int instituteCode;
 	private String studentName;
 	private LocalDate dateOfBirth;
@@ -48,12 +42,21 @@ public class Student {
 	private String bankName;
 	
 	private String password;
+	
+	
 
-	public Long getStudentId() {
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
+	private List<StudentApplication> stuApp;
+	
+	
+    @ManyToOne
+    private InstituteApplication instApp;
+
+	public int getStudentId() {
 		return studentId;
 	}
 
-	public void setStudentId(Long studentId) {
+	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
 
