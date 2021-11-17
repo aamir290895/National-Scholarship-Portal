@@ -6,19 +6,18 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.nsp.project.entity.Ministry;
+import com.nsp.project.entity.Student;
 
 
 @Service
 public interface MinistryService {
 
-	List<Ministry> ministryState(String stateName);
-	
-	Optional<Ministry> findById(int id);
-	void insertMinistry(Ministry min);
-    void updateMinistry(Ministry min);
-    void deleteMinistry(int min);
-    Ministry findMinistryByempw(String email,String password);
-    Ministry findMinistryEmail(String email);
+	  public List<Ministry> getAllMinistryDetails();
+	  
+	  public void saveMinistry (Ministry min);
+	  public Ministry getMinistryDetails(int id);
+	  public void updateMinistryDetails(Ministry min);
+	  public void deleteMinistry(Ministry min);
     
     
 }

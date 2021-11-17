@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nsp.project.entity.Ministry;
+import com.nsp.project.entity.Student;
 import com.nsp.project.repository.MinistryRepository;
 
 @Service
@@ -16,52 +17,46 @@ public class MinistryServiceImpl implements MinistryService {
 	@Autowired
 	MinistryRepository repo;
 
-	
-	
+	@Override
+	public List<Ministry> getAllMinistryDetails() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
 
 	@Override
-	public void insertMinistry(Ministry min) {
+	public void saveMinistry(Ministry min) {
 		// TODO Auto-generated method stub
 		repo.save(min);
 	}
 
 	@Override
-	public void updateMinistry(Ministry min) {
-		// TODO Auto-generated method stub
-		repo.save(min);
-	}
-
-	@Override
-	public void deleteMinistry(int min) {
-		// TODO Auto-generated method stub
-		repo.deleteById(null);;
-	}
-
-	@Override
-	public Ministry findMinistryByempw(String email, String password) {
-		// TODO Auto-generated method stub
+	public Ministry getMinistryDetails(int id) {
+		
+		List<Ministry> list = repo.findAll();
+		for (Ministry ministry: list) {
+			if(ministry.getMinistryId() == id){
+				return ministry;
+			}
+		}
 		return null;
+		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public Ministry findMinistryEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-	@Override
-	public Optional<Ministry> findById(int id) {
-		// TODO Auto-generated method stub
-		String sId = Integer.toString(id);
-		return repo.findById(sId);
+	public void updateMinistryDetails(Ministry min) {
+		
+		
+		
+			repo.save(min);	
 	}
 
 	@Override
-	public List<Ministry> ministryState(String stateName) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteMinistry(Ministry min) {
+			repo.delete(min);	
 	}
+
+	
+	
+
 
 }

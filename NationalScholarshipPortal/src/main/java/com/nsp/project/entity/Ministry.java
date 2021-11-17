@@ -30,6 +30,16 @@ public class Ministry {
 	
 
 
+	public int getMinistryId() {
+		return ministryId;
+	}
+
+
+	public void setMinistryId(int ministryId) {
+		this.ministryId = ministryId;
+	}
+
+
 	public String getStateName() {
 		return stateName;
 	}
