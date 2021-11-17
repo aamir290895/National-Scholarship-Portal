@@ -1,6 +1,7 @@
 package com.nsp.project.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,39 +30,27 @@ public class StudentServiceImpl implements StudentService{
 		repo.save(s);
 	}
 
+
+
+	public Optional<Student> getStudent(int id) {
+		
+		 
+	     return repo.findById(id);
+	}
+
+
 	@Override
-	public Student getStudent(int id) {
+	public void deleteStudent(int id) {
 		// TODO Auto-generated method stub
-		List<Student> list = repo.findAll();
-		for (Student s: list) {
-			if(s.getStudentId() == id){
-				return s;
-			}
-		}
-		return null;
+		repo.deleteById(id);;
 	}
 
 
 
 	@Override
-	public void updateStudentDetail(Student s) {
+	public void updateStudentDetail(int id, Student s) {
 		// TODO Auto-generated method stub
-	      repo.save(s);
+		repo.save(s);
 	}
-
-
-
-	@Override
-	public void deleteStudent(Student s) {
-		// TODO Auto-generated method stub
-		repo.delete(s);
-	}
-
-
-
-	
-
-	
-	
 
 }

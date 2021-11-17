@@ -42,18 +42,27 @@ public class MinistryServiceImpl implements MinistryService {
 		// TODO Auto-generated method stub
 	}
 
-	@Override
-	public void updateMinistryDetails(Ministry min) {
-		
-		
-		
-			repo.save(min);	
-	}
 
 	@Override
 	public void deleteMinistry(Ministry min) {
 			repo.delete(min);	
 	}
+
+	@Override
+	public void updateMinistryDetails(int id, Ministry ministry) {
+		
+		List<Ministry> list = repo.findAll();
+		for (Ministry min: list) {
+			if(min.getMinistryId() == id){
+				 repo.save(ministry);
+			}
+		}
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 	
 	
