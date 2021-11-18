@@ -77,6 +77,24 @@ public class StateNodalOfficer {
 		this.email = email;
 	}
 
+	public int getStateNodalOfficerId() {
+		return stateNodalOfficerId;
+	}
+
+	public void setStateNodalOfficerId(int stateNodalOfficerId) {
+		this.stateNodalOfficerId = stateNodalOfficerId;
+	}
+
+	public List<InstituteApplication> getInstApplication() {
+		return instApplication;
+	}
+
+	public void setInstApplication(List<InstituteApplication> instApplication) {
+		this.instApplication = instApplication;
+	}
+
+
+
 	
 	
      

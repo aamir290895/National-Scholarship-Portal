@@ -59,7 +59,7 @@ public class StudentApplication {
 	private LocalDate ministryAcceptedDate;
 	
 	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
-	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="SCHEME_ID")},
+	@JoinTable(name ="STUDENT",	joinColumns={@JoinColumn(name="SCHEME_ID")},
 			inverseJoinColumns={@JoinColumn(name="STUDENT_ID")})
 	private Set<Scheme> scheme = new HashSet<>();
 	

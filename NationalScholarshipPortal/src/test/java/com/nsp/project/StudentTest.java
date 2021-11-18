@@ -37,13 +37,11 @@ public class StudentTest {
 		System.out.println("Entity Manager Factory : "+entityManagerFactory);
 		
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		//ctrl+shift+M
 		
 		System.out.println("Entity Manager : "+entityManager);
 		
 		EntityTransaction transaction = entityManager.getTransaction();
 
-		//ctrl+shift+M
 		
 		System.out.println("Entity Manager : "+entityManager);
 		

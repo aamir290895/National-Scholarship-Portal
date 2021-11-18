@@ -31,7 +31,7 @@ public class ServiceLayerTesting {
 
 		s.setDistrict("pune");
 		
-		service.updateStudentDetail(1, s);
+		service.updateStudentDetail(5, s);
 	}
 	
 	void getStudent() {

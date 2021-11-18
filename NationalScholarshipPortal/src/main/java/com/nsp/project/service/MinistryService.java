@@ -17,7 +17,7 @@ public interface MinistryService {
 	  public void saveMinistry (Ministry min);
 	  public Optional <Ministry> getMinistryDetails(int id);
 	  public void updateMinistryDetails(int id ,Ministry ministry);
-	  public void deleteMinistry(Ministry min);
+	  public void deleteMinistry(int id);
     
     
 }

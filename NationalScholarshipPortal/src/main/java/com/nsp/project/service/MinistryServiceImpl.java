@@ -33,15 +33,16 @@ public class MinistryServiceImpl implements MinistryService {
 
 
 	@Override
-	public void deleteMinistry(Ministry min) {
-			repo.delete(min);	
+	public void deleteMinistry(int id) {
+			repo.deleteById(id);	
 	}
 
 	@Override
 	public void updateMinistryDetails(int id, Ministry ministry) {
 		
-		Ministry m = repo.getById(id);
-		repo.save(m);
+		
+		ministry.setMinistryId(id);
+		repo.save(ministry);
 		
 		// TODO Auto-generated method stub
 		
@@ -53,9 +54,6 @@ public class MinistryServiceImpl implements MinistryService {
 		// TODO Auto-generated method stub
 	}
 
-	
-
-	
 	
 
 

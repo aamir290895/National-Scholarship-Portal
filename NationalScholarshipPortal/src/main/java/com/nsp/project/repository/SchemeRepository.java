@@ -7,6 +7,6 @@ import com.nsp.project.entity.Scheme;
 
 
 @Repository
-public interface SchemeRepository extends JpaRepository<Scheme, Long> {
+public interface SchemeRepository extends JpaRepository<Scheme, Integer> {
 
 }

@@ -27,22 +27,22 @@ public class StudentController {
 
 	}
 
-	@RequestMapping(value = "/id/{id}")
+	@GetMapping(value = "/id/{id}")
 	public Optional<Student> getStudent(@PathVariable int id) {
 		return stuService.getStudent(id);
 	}
 	
-	 @RequestMapping(value = "/add", method=RequestMethod.POST)
+	 @GetMapping(value = "/add")
 	 public void saveStudent(@RequestBody Student student) {
 		 stuService.saveStudent(student);
 	 }
 	 
-	 @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+	 @GetMapping(value = "/update/{id}")
 	 public void updateStudentDetails(@RequestBody Student student,@PathVariable int id ) {
 		 stuService.updateStudentDetail(id, student);
 	 }
 	 
-	 @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	 @GetMapping(value = "/delete/{id}")
 	 public void deleteStudent(@PathVariable int student) {
 		 stuService.deleteStudent(student);
 		 	 

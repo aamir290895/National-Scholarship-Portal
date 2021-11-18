@@ -21,7 +21,7 @@ public class Scheme {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long schemeId;
+	private int schemeId;
 	
 	private String schemeName;
 	
@@ -39,12 +39,12 @@ public class Scheme {
 
 	
 
-	public Long getSchemeId() {
+	public int getSchemeId() {
 		return schemeId;
 	}
 
 
-	public void setSchemeId(Long schemeId) {
+	public void setSchemeId(int schemeId) {
 		this.schemeId = schemeId;
 	}
 
