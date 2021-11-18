@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nsp.project.entity.Ministry;
 import com.nsp.project.entity.Student;
 import com.nsp.project.repository.StudentRepository;
 
@@ -50,7 +51,8 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public void updateStudentDetail(int id, Student s) {
 		// TODO Auto-generated method stub
-		repo.save(s);
+		Student st = repo.getById(id);
+	    repo.save(st);
 	}
 
 }

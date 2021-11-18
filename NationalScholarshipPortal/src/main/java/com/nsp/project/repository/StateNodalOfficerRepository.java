@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.nsp.project.entity.StateNodalOfficer;
 
 @Repository
-public interface StateNodalOfficerRepository extends JpaRepository<StateNodalOfficer, String>{
+public interface StateNodalOfficerRepository extends JpaRepository<StateNodalOfficer, Integer>{
 
 }

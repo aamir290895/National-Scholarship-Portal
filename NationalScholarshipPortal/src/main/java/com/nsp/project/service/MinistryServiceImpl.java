@@ -29,18 +29,7 @@ public class MinistryServiceImpl implements MinistryService {
 		repo.save(min);
 	}
 
-	@Override
-	public Ministry getMinistryDetails(int id) {
-		
-		List<Ministry> list = repo.findAll();
-		for (Ministry ministry: list) {
-			if(ministry.getMinistryId() == id){
-				return ministry;
-			}
-		}
-		return null;
-		// TODO Auto-generated method stub
-	}
+	
 
 
 	@Override
@@ -51,15 +40,17 @@ public class MinistryServiceImpl implements MinistryService {
 	@Override
 	public void updateMinistryDetails(int id, Ministry ministry) {
 		
-		List<Ministry> list = repo.findAll();
-		for (Ministry min: list) {
-			if(min.getMinistryId() == id){
-				 repo.save(ministry);
-			}
-		}
+		Ministry m = repo.getById(id);
+		repo.save(m);
 		
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Optional<Ministry> getMinistryDetails(int id) {
+		return repo.findById(id);
+		// TODO Auto-generated method stub
 	}
 
 	

@@ -7,6 +7,7 @@ import com.nsp.project.entity.Student;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Integer>{
+
  	
 	
 }

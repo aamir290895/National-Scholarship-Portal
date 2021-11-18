@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.nsp.project.entity.Ministry;
 
 @Repository
-public interface MinistryRepository extends JpaRepository<Ministry, String> {
+public interface MinistryRepository extends JpaRepository<Ministry, Integer> {
+
 
 }
