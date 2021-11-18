@@ -1,13 +1,16 @@
 package com.nsp.project.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nsp.project.entity.StateNodalOfficer;
 import com.nsp.project.entity.StudentApplication;
 import com.nsp.project.service.StudentApplicationServiceImpl;
 
@@ -23,4 +26,27 @@ public class StudentApplicationController {
 		return service.getAllApplication();
 	}
 
+
+	@GetMapping("/get/{id}")
+	public Optional<StudentApplication> getApplication(@PathVariable int id){
+		return service.getApplication(id);
+	}
+	
+	@GetMapping("/save")
+	 public void saveApplication(@RequestBody StudentApplication application) {
+		 service.saveApplication(application);
+	 }
+	
+	@GetMapping("/update")
+	public void updateApplication(@RequestBody int id,StudentApplication application) {
+		
+		service.updateApplication(id, application);
+	}
+	
+	@GetMapping("/delete")
+	public void deleteApplication(@RequestBody int id) {
+		
+		service.deleteApplication(id);
+	}
+	
 }
