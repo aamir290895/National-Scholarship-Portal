@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,19 +35,19 @@ public class StudentApplicationController {
 		return service.getApplication(id);
 	}
 	
-	@GetMapping("/save")
+	@PostMapping("/save")
 	 public void saveApplication(@RequestBody StudentApplication application) {
 		 service.saveApplication(application);
 	 }
 	
-	@GetMapping("/update")
-	public void updateApplication(@RequestBody int id,StudentApplication application) {
+	@PutMapping("/update")
+	public void updateApplication(@PathVariable int id, @RequestBody StudentApplication application) {
 		
 		service.updateApplication(id, application);
 	}
 	
-	@GetMapping("/delete")
-	public void deleteApplication(@RequestBody int id) {
+	@DeleteMapping("/delete")
+	public void deleteApplication(@PathVariable int id) {
 		
 		service.deleteApplication(id);
 	}

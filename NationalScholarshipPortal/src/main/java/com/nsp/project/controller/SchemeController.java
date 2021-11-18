@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,24 +32,24 @@ public class SchemeController {
 	}
 
 	
-	@GetMapping("/get/{id}")
+	@GetMapping(value ="/get/{id}")
 	public Optional<Scheme> getScheme(@PathVariable int id){
 		return service.getScheme(id);
 	}
 	
-	@GetMapping("/save")
+	@PostMapping(value = "/save")
 	 public void saveScheme(@RequestBody Scheme scheme) {
 		 service.saveScheme(scheme);
 	 }
 	
-	@GetMapping("/update")
-	public void updateScheme(@RequestBody int id,Scheme scheme) {
+	@PutMapping(value ="/update")
+	public void updateScheme(@PathVariable int id,@RequestBody Scheme scheme) {
 		
 		service.updateSchemeDetail(id, scheme);
 	}
 	
-	@GetMapping("/delete")
-	public void deleteScheme(@RequestBody int id) {
+	@DeleteMapping(value ="/delete")
+	public void deleteScheme(@PathVariable int id) {
 		
 		service.deleteScheme(id);
 	}

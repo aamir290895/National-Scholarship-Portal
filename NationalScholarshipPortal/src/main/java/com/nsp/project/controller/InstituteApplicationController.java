@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,17 +38,17 @@ public class InstituteApplicationController {
 		return service.getApplicationDetails(id);
 	}
 	
-	 @GetMapping(value = "/add")
+	 @PostMapping(value = "/add")
 	 public void saveInstitute(@RequestBody InstituteApplication instApp) {
 		 service.saveInstitute(instApp);
 	 }
 	 
-	 @GetMapping(value = "/update/{id}")
+	 @PutMapping(value = "/update/{id}")
 	 public void updateInstituteDetails(@RequestBody InstituteApplication instApp,@PathVariable int id ) {
 		 service.updateInstituteDetails(id, instApp);
 	 }
 	 
-	 @GetMapping(value = "/delete/{id}")
+	 @DeleteMapping(value = "/delete/{id}")
 	 public void deleteInstitute(@PathVariable int inst) {
        service.deleteInstitute(inst);		 	 
 	 }
