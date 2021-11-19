@@ -161,6 +161,22 @@ public class Student {
 		this.password = password;
 	}
 
+	public List<StudentApplication> getStuApp() {
+		return stuApp;
+	}
+
+	public void setStuApp(List<StudentApplication> stuApp) {
+		this.stuApp = stuApp;
+	}
+
+	public InstituteApplication getInstApp() {
+		return instApp;
+	}
+
+	public void setInstApp(InstituteApplication instApp) {
+		this.instApp = instApp;
+	}
+
 	
 
 	

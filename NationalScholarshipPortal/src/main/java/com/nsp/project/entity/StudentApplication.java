@@ -196,6 +196,22 @@ public class StudentApplication {
 		this.ministryAcceptedDate = ministryAcceptedDate;
 	}
 
+	public Set<Scheme> getScheme() {
+		return scheme;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setScheme(Set<Scheme> scheme) {
+		this.scheme = scheme;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
 	
 	
 	

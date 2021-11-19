@@ -25,6 +25,16 @@ public class Scheme {
 	
 	private String schemeName;
 	
+	public Set<Scheme> getScheme() {
+		return scheme;
+	}
+
+
+	public void setScheme(Set<Scheme> scheme) {
+		this.scheme = scheme;
+	}
+
+
 	private LocalDate lastDateToApply;
 	
 	private int amount ;
