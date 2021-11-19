@@ -46,7 +46,7 @@ public class StudentApplicationController {
 		service.updateApplication(id, application);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	public void deleteApplication(@PathVariable int id) {
 		
 		service.deleteApplication(id);

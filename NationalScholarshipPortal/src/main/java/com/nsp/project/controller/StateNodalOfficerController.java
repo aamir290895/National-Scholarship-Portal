@@ -46,7 +46,7 @@ public class StateNodalOfficerController {
 		service.updateNodalOfficer(id, officer);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	public void deleteOfficer(@PathVariable int id) {
 		
 		service.deleteNodalOfficer(id);

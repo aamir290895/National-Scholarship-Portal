@@ -49,8 +49,8 @@ public class InstituteApplicationController {
 	 }
 	 
 	 @DeleteMapping(value = "/delete/{id}")
-	 public void deleteInstitute(@PathVariable int inst) {
-       service.deleteInstitute(inst);		 	 
+	 public void deleteInstitute(@PathVariable int id) {
+       service.deleteInstitute(id);		 	 
 	 }
 	 
 }

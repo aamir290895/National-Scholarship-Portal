@@ -48,7 +48,7 @@ public class SchemeController {
 		service.updateSchemeDetail(id, scheme);
 	}
 	
-	@DeleteMapping(value ="/delete")
+	@DeleteMapping(value ="/delete/{id}")
 	public void deleteScheme(@PathVariable int id) {
 		
 		service.deleteScheme(id);
