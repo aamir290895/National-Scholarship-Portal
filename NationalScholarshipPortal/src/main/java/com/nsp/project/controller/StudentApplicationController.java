@@ -40,7 +40,7 @@ public class StudentApplicationController {
 		 service.saveApplication(application);
 	 }
 	
-	@PutMapping("/update")
+	@PutMapping("/update/{id}")
 	public void updateApplication(@PathVariable int id, @RequestBody StudentApplication application) {
 		
 		service.updateApplication(id, application);

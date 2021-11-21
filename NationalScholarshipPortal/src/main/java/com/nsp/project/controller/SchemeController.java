@@ -42,7 +42,7 @@ public class SchemeController {
 		 service.saveScheme(scheme);
 	 }
 	
-	@PutMapping(value ="/update")
+	@PutMapping(value ="/update/{id}")
 	public void updateScheme(@PathVariable int id,@RequestBody Scheme scheme) {
 		
 		service.updateSchemeDetail(id, scheme);

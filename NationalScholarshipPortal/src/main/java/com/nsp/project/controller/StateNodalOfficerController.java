@@ -40,7 +40,7 @@ public class StateNodalOfficerController {
 		 service.saveNodalOfficer(officer);
 	 }
 	
-	@PutMapping("/update")
+	@PutMapping("/update/{id}")
 	public void updateOfficer(@PathVariable int id,@RequestBody  StateNodalOfficer officer) {
 		
 		service.updateNodalOfficer(id, officer);

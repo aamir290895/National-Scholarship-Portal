@@ -25,15 +25,7 @@ public class Scheme {
 	
 	private String schemeName;
 	
-	public Set<Scheme> getScheme() {
-		return scheme;
-	}
-
-
-	public void setScheme(Set<Scheme> scheme) {
-		this.scheme = scheme;
-	}
-
+	
 
 	private LocalDate lastDateToApply;
 	
@@ -44,7 +36,7 @@ public class Scheme {
 	@ManyToMany(fetch = FetchType.EAGER , cascade =CascadeType.ALL)
 	@JoinTable(name ="Student",	joinColumns={@JoinColumn(name="STUDENT_ID")},
 			inverseJoinColumns={@JoinColumn(name="SCHEME_ID")})
-	private Set<Scheme> scheme = new HashSet<>();
+	private Set<StudentApplication> application = new HashSet<>();
 
 
 	
@@ -86,6 +78,16 @@ public class Scheme {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+
+	public Set<StudentApplication> getApplication() {
+		return application;
+	}
+
+
+	public void setApplication(Set<StudentApplication> application) {
+		this.application = application;
 	}
 
 	

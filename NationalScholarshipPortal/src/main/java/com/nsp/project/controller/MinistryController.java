@@ -41,7 +41,7 @@ public class MinistryController {
 		service.saveMinistry(ministry);
 	}
 	
-	@PutMapping(value = "/update")
+	@PutMapping(value = "/update/{id}")
 	public void updateMinistryDetails(@PathVariable int id,@RequestBody Ministry ministry) {
 		
 		service.updateMinistryDetails(id, ministry);
