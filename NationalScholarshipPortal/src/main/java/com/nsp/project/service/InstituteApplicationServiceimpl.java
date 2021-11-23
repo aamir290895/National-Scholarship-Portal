@@ -30,7 +30,7 @@ public class InstituteApplicationServiceimpl implements InstituteApplicationServ
 	@Override
 	public Optional<InstituteApplication> getApplicationDetails(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.findById(id);
 	}
 
 	@Override
