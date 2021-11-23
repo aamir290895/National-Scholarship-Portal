@@ -67,6 +67,22 @@ public class InstituteApplication {
 
 
 	
+	public StateNodalOfficer getSno() {
+		return sno;
+	}
+
+	public List<Student> getStuList() {
+		return stuList;
+	}
+
+	public void setSno(StateNodalOfficer sno) {
+		this.sno = sno;
+	}
+
+	public void setStuList(List<Student> stuList) {
+		this.stuList = stuList;
+	}
+
 	public String getInstituteName() {
 		return instituteName;
 	}

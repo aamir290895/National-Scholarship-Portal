@@ -19,8 +19,10 @@ public class RepositoriesTesting {
 	StudentRepository studentRepository;
 	
 	
-	@Autowired
-	InstituteApplicationRepository instituteRepository;
+	@Autowired 
+	InstituteApplicationRepository instRepo;
+	
+	
 	
 	@Test
 	void saveStudent() {
@@ -37,8 +39,15 @@ public class RepositoriesTesting {
 		s.setEmail("avinash@gmail.com");
 		s.setBankName("SBI");
 		s.setDateOfBirth(ld);
-		s.setInstituteCode(1);
-
+		s.setInstituteCode(25);
+		
+		
+		InstituteApplication in = new InstituteApplication();
+		in.setInstitudeCode(1);
+		in.setCity("pune");
+		in.setDiseCode(56);
+		in.setApplyDate(ld);
+		instRepo.save(in);
         studentRepository.save(s);
 	}
 	
@@ -50,11 +59,9 @@ public class RepositoriesTesting {
 		
 		LocalDate ld = LocalDate.of(2021, 10, 11);
 
-		instApp.setInstitudeCode(32);
 		instApp.setApplyDate(ld);
 		
-		instituteRepository.save(instApp);
-	}
+		instRepo.save(instApp);	}
 
 	@Test
 	void listStudents() {
